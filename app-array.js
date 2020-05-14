@@ -173,3 +173,5 @@ console.log(copyObjectInArray);
 const destructureArray = ["sandeep", "dalal", "Mr.", 20];
 const [firstName, lastName, ...otherInformation] = destructureArray;
 console.log(`firstName : ${firstName} | lastName : ${lastName} | otherInformation : ${otherInformation}`);
+
+// i am adding a new branch now as named app-array-branch
