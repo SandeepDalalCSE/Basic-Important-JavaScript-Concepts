@@ -168,3 +168,8 @@ console.log(exactCopyObjectInArray);
 // Note: Changing value of key pairs in object will also reflect in the copied array. Because object are reference type.
 objectInArray[0].id = 3;
 console.log(copyObjectInArray);
+
+// More Operations on the arrays Destructuring
+const destructureArray = ["sandeep", "dalal", "Mr.", 20];
+const [firstName, lastName, ...otherInformation] = destructureArray;
+console.log(`firstName : ${firstName} | lastName : ${lastName} | otherInformation : ${otherInformation}`);
