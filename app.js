@@ -161,6 +161,10 @@ const objectInArray = [
 const copyObjectInArray = [...objectInArray]; // All objects in the array will be copied to newly array.
 console.log(objectInArray, copyObjectInArray);
 
+// Note: To keep the original Array in the copied array, if change key value pairs in future, we can do this
+const exactCopyObjectInArray = [...objectInArray.map(arrayValue => ({ id: arrayValue.id, userName: arrayValue.userName }))];
+console.log(exactCopyObjectInArray);
+
 // Note: Changing value of key pairs in object will also reflect in the copied array. Because object are reference type.
 objectInArray[0].id = 3;
 console.log(copyObjectInArray);
