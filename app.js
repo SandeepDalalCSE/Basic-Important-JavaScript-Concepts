@@ -161,6 +161,6 @@ const objectInArray = [
 const copyObjectInArray = [...objectInArray]; // All objects in the array will be copied to newly array.
 console.log(objectInArray, copyObjectInArray);
 
-// Note: Changing value of key pairs in object will also reflect in the copied array.
+// Note: Changing value of key pairs in object will also reflect in the copied array. Because object are reference type.
 objectInArray[0].id = 3;
 console.log(copyObjectInArray);
