@@ -158,5 +158,9 @@ const objectInArray = [
   { id: 1, userName: "Sandeep" },
   { id: 2, userName: "Ajay" }
 ];
-const copyObjectInArray = [...objectInArray];
+const copyObjectInArray = [...objectInArray]; // All objects in the array will be copied to newly array.
+console.log(objectInArray, copyObjectInArray);
+
+// Note: Changing value of key pairs in object will also reflect in the copied array.
+objectInArray[0].id = 3;
 console.log(copyObjectInArray);
