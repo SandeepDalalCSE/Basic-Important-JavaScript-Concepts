@@ -153,3 +153,10 @@ const pullOutValue = [...spredOperator];
 console.log(pullOutValue);
 
 console.log(Math.min(...sortArray)); //will find the smallest value form the sortArray.
+
+const objectInArray = [
+  { id: 1, userName: "Sandeep" },
+  { id: 2, userName: "Ajay" }
+];
+const copyObjectInArray = [...objectInArray];
+console.log(copyObjectInArray);
