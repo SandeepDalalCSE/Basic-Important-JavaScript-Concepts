@@ -183,7 +183,7 @@ const personObject5 = {
   }
 };
 
-const { greetObject5 } = personObject5;
+const { greetObject5 } = personObject5; // Object destructuring
 greetObject5.call(personObject5); //here personObject5 refers to personObject5 object. so calling this function.
 
 // selectBtn;
