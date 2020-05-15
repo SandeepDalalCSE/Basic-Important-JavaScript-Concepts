@@ -26,6 +26,11 @@ console.log(cNumberKeyObject);
 console.log(cNumberKeyObject[1]); // here javascript totally understand it is a number.
 console.log(cNumberKeyObject["1"]); // an alternative becz javascript converts everything as string.
 
+// order of key-value pairs in an object.
+// Note: if key are (string) or (mixer of string and numbers) then order will be according to key-pair added to that object and numbered key will be arranged first.
+const dMixObject = { id: 2, "first name": "ajay", 1: "rank" };
+console.log(dMixObject); // means  1 , id , first name
+
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
 // const buttonAdded = document.getElementById("buttonAppendHere");
