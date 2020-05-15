@@ -35,6 +35,16 @@ console.log(dMixObject); // means  1 , id , first name
 const dNumberObject = { 10: "123456789", 0: "id", 5: "name", 1: "title" };
 console.log(dNumberObject); // means  0 , 1 , 5, 10
 
+// setting key as dynamically.
+const userName = "userId";
+const eDynamicObject = {
+  [userName]: 1, // means userId:1 ie setting value dynamically
+  userEmail: "sandeepdalal1995@gmail.com"
+};
+console.log(eDynamicObject);
+const userMail = "userEmail";
+console.log(eDynamicObject[userMail]); // fetching value dynamically
+
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
 // const buttonAdded = document.getElementById("buttonAppendHere");
