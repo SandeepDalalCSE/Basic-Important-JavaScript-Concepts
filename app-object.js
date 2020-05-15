@@ -20,6 +20,12 @@ console.log(bObject["first name"]); // To access the value of 'first name' key, 
 console.log(bObject.id); // this is possible
 console.log(bObject["id"]); // an alternative
 
+// keys as numbers
+const cNumberKeyObject = { 1: "id", 2: "sandeep" };
+console.log(cNumberKeyObject);
+console.log(cNumberKeyObject[1]); // here javascript totally understand it is a number.
+console.log(cNumberKeyObject["1"]); // an alternative becz javascript converts everything as string.
+
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
 // const buttonAdded = document.getElementById("buttonAppendHere");
