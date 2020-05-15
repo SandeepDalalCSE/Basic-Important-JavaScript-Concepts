@@ -113,6 +113,43 @@ const person2 = {
 
 person2.greet(); // logs nothing (or some global name on window object), "this" refers to global (window) object, even in strict mode
 
+// Working more on this keyword, how it is called with respect to it, more with objects
+//  Case 1
+const personObject1 = {
+  name: "Sandeep",
+  greet() {
+    console.log(this); // ??? => therefore 'this' refers to 'personObject1'.
+    console.log(this.name); // ??? => therefore 'this.name' to 'personObject1.name'.
+  }
+};
+
+personObject1.greet(); // note: here personObject1 is responsible for calling this function greet. If you found any this inside that function means it is pointing the the object who is responsible for calling this function.
+
+// Case 2
+const personObject2 = {
+  name: "Sandeep",
+  greet() {
+    console.log(this); // ??? => therefore 'this' refers to 'personObject2'
+    console.log(this.name); // ??? => therefore 'this.name' refers to 'personObject2.name'
+  }
+};
+
+const adminObject = { age: 30 };
+
+adminObject.greet = personObject2.greet; //here value is assigned to adminObject with key greet as function.
+// personObject2.greet(); // here personObject2 is responsible for calling it
+// therefore now adminObject will look like this.
+// const adminObject = {
+//   age: 30,
+//   greet() {
+//     console.log(this); // ??? => therefore 'this' refers to 'adminObject', value will be complete adminObject
+//     console.log(this.name); // ??? => therefore 'this.name' refers to 'adminObject.name', value will be undefined because name key do not exists in adminObject.
+//   }
+// };
+adminObject.greet(); // here adminObject is responsible for calling greet which there in adminObject
+
+// Case 3
+
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
 // const buttonAdded = document.getElementById("buttonAppendHere");
