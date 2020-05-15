@@ -31,6 +31,10 @@ console.log(cNumberKeyObject["1"]); // an alternative becz javascript converts e
 const dMixObject = { id: 2, "first name": "ajay", 1: "rank" };
 console.log(dMixObject); // means  1 , id , first name
 
+// Note: if keys are only number and should be positive no including 0.
+const dNumberObject = { 10: "123456789", 0: "id", 5: "name", 1: "title" };
+console.log(dNumberObject); // means  0 , 1 , 5, 10
+
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
 // const buttonAdded = document.getElementById("buttonAppendHere");
