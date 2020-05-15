@@ -13,6 +13,13 @@ console.log(aObject);
 delete aObject.userEmail; // userEmail key-value pair is deleted.
 console.log(aObject);
 
+// special key names and square bracket property access
+const bObject = { id: 2, "first name": "ajay" }; // here "first name" is the key
+// console.log(bObject.first name); // this is not possible to access like this.
+console.log(bObject["first name"]); // To access the value of 'first name' key, we use square bracket and passing as string with inverted commas.
+console.log(bObject.id); // this is possible
+console.log(bObject["id"]); // an alternative
+
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
 // const buttonAdded = document.getElementById("buttonAppendHere");
