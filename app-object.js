@@ -149,6 +149,42 @@ adminObject.greet = personObject2.greet; //here value is assigned to adminObject
 adminObject.greet(); // here adminObject is responsible for calling greet which there in adminObject
 
 // Case 3
+const personObject3 = {
+  name: "Sandeep",
+  greetObject3() {
+    console.log(this); // ??? => therefore 'this' refers to 'window' global object, value will be window object
+    console.log(this.name); // ??? => therefore 'this.name' refers to 'window.name', value will be undefined/or null because name key do not exists in window object.
+  }
+};
+
+const { greetObject3 } = personObject3; // Object destructuring
+greetObject3(); // this is called like this 'window.greet();'
+
+// Case 4
+const personObject4 = {
+  name: "Sandeep",
+  greetObject4() {
+    console.log(this); // ??? => therefore 'this' refers to 'window' global object, value will be window object
+    console.log(this.name); // ??? => therefore 'this.name' refers to 'window.name', value will be undefined/or null because name key do not exists in window object.
+  }
+};
+
+const { greetObject4 } = personObject4; // Object destructuring
+greetObject4.call(this); //here this refers to window object. so calling this function
+greetObject4.apply(this); // an alternative to call methods defined in object.
+greetObject4.call(window); // an alternative to call methods defined in object.
+
+// Case 5
+const personObject5 = {
+  name: "Sandeep",
+  greetObject5() {
+    console.log(this); // ??? => therefore 'this' refers to 'personObject5' global object, value will be personObject5 object
+    console.log(this.name); // ??? => therefore 'this.name' refers to 'personObject5.name', value will be 'sandeep' because name is the key in this personObject5 object.
+  }
+};
+
+const { greetObject5 } = personObject5;
+greetObject5.call(personObject5); //here personObject5 refers to personObject5 object. so calling this function.
 
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
