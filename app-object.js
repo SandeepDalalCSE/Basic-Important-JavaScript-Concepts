@@ -45,6 +45,44 @@ console.log(eDynamicObject);
 const userMail = "userEmail";
 console.log(eDynamicObject[userMail]); // fetching value dynamically
 
+// working with this keyword
+console.log(this); //here 'this' refers to window object
+
+const thisKeywordObject = {
+  id: 1,
+  username: "sandeep",
+  greetWithArrowFunction: () => {
+    console.log(this); // here 'this' refers to window object
+    console.log(this.id); // here 'this.id' refers to 'window.id', gives undefined value
+  },
+  greetWithoutArrowFunction: function() {
+    console.log(this); // here 'this' refers to 'thisKeywordObject' object, gives complete Object data
+    console.log(this.id); // here 'this.id' refers to 'thisKeywordObject.id', gives 1 as value
+    // console.log(greetWithArrowFunction);
+  },
+  greet() {
+    console.log(this); // here 'this' refers to 'thisKeywordObject' object, gives complete Object data
+    console.log(this.id); // here 'this.id' refers to 'thisKeywordObject.id', gives 1 as value
+  }
+};
+
+console.log(thisKeywordObject);
+
+thisKeywordObject.greetWithArrowFunction();
+thisKeywordObject.greetWithoutArrowFunction();
+thisKeywordObject.greet();
+
+const thisFunction = function() {
+  console.log(this + "thisFuction");
+  console.log("thisFunction called");
+};
+const anotherFunction = function() {
+  console.log(this + "thisFuction");
+  thisFunction();
+};
+
+anotherFunction();
+
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
 // const buttonAdded = document.getElementById("buttonAppendHere");
