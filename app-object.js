@@ -72,16 +72,46 @@ thisKeywordObject.greetWithArrowFunction();
 thisKeywordObject.greetWithoutArrowFunction();
 thisKeywordObject.greet();
 
-const thisFunction = function() {
-  console.log(this + "thisFuction");
-  console.log("thisFunction called");
-};
-const anotherFunction = function() {
-  console.log(this + "thisFuction");
-  thisFunction();
+// Working more on this keyword
+// 1) this in Global Context (i.e. outside of any function)
+function somethingThis1() {}
+
+console.log(this); // logs global object (window in browser) - ALWAYS (also in strict mode)!
+
+// 2) this in a Function (non-Arrow) - Called in the global context
+function somethingThis2() {
+  console.log(this);
+}
+
+somethingThis2(); // logs global object (window in browser) in non-strict mode, undefined in strict mode
+
+// 3) this in an Arrow-Function - Called in the global context
+const somethingThis3 = () => {
+  console.log(this);
 };
 
-anotherFunction();
+somethingThis3(); // logs global object (window in browser) - ALWAYS (also in strict mode)!
+
+// 4) this in a Method (non-Arrow) - Called on an object
+const person1 = {
+  name: "sandeep",
+  greet: function() {
+    // or use method shorthand: greet() { ... }
+    console.log(this.name);
+  }
+};
+
+person1.greet(); // logs 'Sandeep', "this" refers to the person object
+
+// 5) this in a Method (Arrow Function) - Called on an object
+const person2 = {
+  name: "Sandeep",
+  greet: () => {
+    console.log(this.name);
+  }
+};
+
+person2.greet(); // logs nothing (or some global name on window object), "this" refers to global (window) object, even in strict mode
 
 // selectBtn;
 // console.dir(document.getElementById("selectBtn"));
