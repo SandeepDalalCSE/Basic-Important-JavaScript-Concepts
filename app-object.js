@@ -45,7 +45,7 @@ console.log(eDynamicObject);
 const userMail = "userEmail";
 console.log(eDynamicObject[userMail]); // fetching value dynamically
 
-// working with this keyword
+// working with this keyword | this refers to whose is basically responsible for calling it.
 console.log(this); //here 'this' refers to window object
 
 const thisKeywordObject = {
